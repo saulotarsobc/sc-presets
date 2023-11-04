@@ -17,32 +17,34 @@
     "build-electron": "tsc -p backend",
     "build": "npm run clean && npm run build-frontend && npm run build-electron",
     "pack-app": "npm run build-frontend && npm run build-electron && npm run build && electron-builder --dir",
-    "dist": "npm run clean && npm run build && electron-builder",
+    "dist": "npm run build && electron-builder",
     "type-check": "tsc -p ./frontend/tsconfig.json && tsc -p ./backend/tsconfig.json",
     "publish": "electron-builder --win -p always",
     "publish-linux": "electron-builder --linux -p always",
     "postinstall": "electron-builder install-app-deps",
-    "release": "electron-builder"
+    "release": "electron-builder",
+    "libs-update": "ncu -u && npm install"
   },
   "dependencies": {
     "electron-is-dev": "^2.0.0",
     "electron-next": "^3.1.5",
     "electron-store": "^8.1.0",
-    "esbuild": "^0.19.3",
+    "esbuild": "^0.19.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "sequelize": "^6.33.0",
+    "sequelize": "^6.34.0",
     "sqlite3": "^5.1.6"
   },
   "devDependencies": {
-    "@types/node": "^20.5.6",
-    "@types/react": "^18.2.21",
-    "@types/react-dom": "^18.2.7",
-    "@types/sequelize": "^4.28.15",
-    "electron": "^26.2.0",
-    "electron-builder": "^24.6.3",
-    "next": "^13.4.19",
-    "rimraf": "^5.0.1"
+    "@types/node": "^20.8.10",
+    "@types/react": "^18.2.34",
+    "@types/react-dom": "^18.2.14",
+    "@types/sequelize": "^4.28.17",
+    "electron": "^27.0.3",
+    "electron-builder": "^24.6.4",
+    "next": "^14.0.1",
+    "npm-check-updates": "^16.14.6",
+    "rimraf": "^5.0.5"
   },
   "build": {
     "productName": "SC - Presets",
